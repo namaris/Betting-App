@@ -1,0 +1,50 @@
+﻿Option Strict On
+Public Class Form1
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+        ListBox1.Items.Clear() ' Borramos la pantalla de los datos anteriores
+
+        'variables que tienen los valores iniciales
+        Dim N As Integer = CInt(NumericUpDown2.Value)    ' Número de secuencias
+        Dim K As Double = CDbl(txt_capital1.Text) ' Capital
+        Dim C As Double = CDbl(nud_cuota.Value)  ' Coeficiente
+
+
+        'variables que buscamos
+        Dim X(N) As Double      ' Aportaciones al capital
+        Dim B As Double         ' Beneficio de la primera secuencia
+
+        'variables auxiliares
+        Dim i As Integer
+        Dim D As Double
+        Dim S As Double
+
+        D = 0
+        For i = 1 To N //
+            D = D + (N + 1 - i) * C ^ (i - 1) * (C - 1) ^ (N - i)
+        Next
+        B = K * (C - 1) ^ N / D
+        txt_Diaria.Text = CStr(FormatNumber(B, 2) & " €") ' Beneficio Diario
+        txt_Mensual.Text = CStr(FormatNumber(B * 30, 2) & " €") 'Beneficio Mensual
+        X(1) = (1 * B + S) / (C - 1) : S = S + X(1) : txt_minima.Text = CStr(FormatNumber(X(1), 2) & " €") ' Inversion Minima
+
+        S = 0.0
+        For i = 1 To N
+            X(i) = (i* B + S) / (C - 1)
+            S = S + X(i)
+            ListBox1.Items.Add(i & "º - " & FormatNumber(X(i), 2) & " €")
+        Next
+
+    End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SalirToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub AcercaDeToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AcercaDeToolStripMenuItem1.Click
+        MessageBox.Show("Bet Formula @ 2011 by MasterHack", "Creditos", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+    End Sub
+
+
+End Class

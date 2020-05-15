@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Betapp", "Betapp\Betapp.csproj", "{225948EF-3ABF-40EE-9895-CED4630316D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{225948EF-3ABF-40EE-9895-CED4630316D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{225948EF-3ABF-40EE-9895-CED4630316D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{225948EF-3ABF-40EE-9895-CED4630316D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{225948EF-3ABF-40EE-9895-CED4630316D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4E3DDC2-DD05-4021-A019-64F1D8195A77}
+	EndGlobalSection
+EndGlobal
